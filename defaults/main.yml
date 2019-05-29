@@ -1,0 +1,8 @@
+---
+# defaults file for resolvconf role
+resolv_nameserver:
+  - '1.1.1.1'
+  - '1.0.0.1'
+  - '9.9.9.9'
+
+resolv_search: 'mylocalnetwork.local'

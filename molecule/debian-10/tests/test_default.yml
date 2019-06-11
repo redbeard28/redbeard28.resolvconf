@@ -1,0 +1,5 @@
+---
+file:
+  /usr/bin/git:
+    # required attributes
+    exists: true

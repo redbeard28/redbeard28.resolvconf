@@ -2,4 +2,4 @@
 - name: Converge
   hosts: all
   roles:
-    - role: redbeard28.telegraf
+    - role: redbeard28.resolvconf

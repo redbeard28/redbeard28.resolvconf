@@ -5,8 +5,6 @@ python:
   - "3.6"
 
 env:
-  global:
-    - ROLE_NAME: redbeard28.gitclient
   matrix:
     - DISTRO: centos-latest
     - DISTRO: centos-6

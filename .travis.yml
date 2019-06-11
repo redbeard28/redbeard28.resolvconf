@@ -1,0 +1,23 @@
+---
+language: python
+services: docker
+python:
+  - "3.6"
+
+env:
+  global:
+    - ROLE_NAME: redbeard28.gitclient
+  matrix:
+    - DISTRO: centos-latest
+    - DISTRO: centos-6
+    - DISTRO: ubuntu-16.04
+    - DISTRO: ubuntu-18.04
+    - DISTRO: debian-9
+    - DISTRO: debian-10
+
+install:
+  - pip install molecule docker molecule[docker]
+
+script:
+  - molecule test --scenario-name $DISTRO
+

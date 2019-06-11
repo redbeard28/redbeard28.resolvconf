@@ -1,0 +1,5 @@
+---
+- src: 'https://github.com/redbeard28/redbeard28.telegraf.git'
+  scm: 'git'
+  name: 'telegraf'
+  version: 'master'

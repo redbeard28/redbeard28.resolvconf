@@ -1,0 +1,5 @@
+---
+file:
+  /etc/resolv.conf:
+    # required attributes
+    exists: true

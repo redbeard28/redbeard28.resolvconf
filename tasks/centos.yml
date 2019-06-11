@@ -1,3 +1,9 @@
 ---
 - name: Copy Jinja template
-  template: src=resolv.j2 dest=/etc/resolv.conf
+  template:
+    src: resolv.j2
+    dest: /etc/resolv.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true

@@ -1,0 +1,8 @@
+---
+file:
+  /etc/resolve.conf
+    exists: true
+    owner: root
+    group: root
+    mode: "0555"
+    filetype: file

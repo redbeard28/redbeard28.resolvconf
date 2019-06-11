@@ -1,0 +1,42 @@
+---
+scenario:
+  name: centos-6
+  test_sequence:
+    - destroy
+    - create
+    - converge
+    # - idempotence
+    # - lint
+    - verify
+    - destroy
+
+dependency:
+  name: galaxy
+  enable: True
+  options:
+    role-file: requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: centos-6
+    image: geerlingguy/docker-centos6-ansible
+    pre_build_image: yes
+    privileged: True
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+#    published_ports:
+#      - 0.0.0.0:6000:22/tcp
+provisioner:
+  name: ansible
+  playbooks:
+    converge: ../resources/playbook-centos6.yml
+  lint:
+    name: ansible-lint
+    enable: False
+
+verifier:
+  name: goss
+  lint:
+    name: yamllint
